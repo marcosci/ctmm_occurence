@@ -35,7 +35,7 @@ shinyModule <- function(input, output, session, data){ ## The parameter "data" i
   })
   
   return(reactive({
-    data
+    list(data, occu)
     })) ## if data are not modified, the unmodified input data must be returned
 }
 
