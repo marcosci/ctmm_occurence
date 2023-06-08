@@ -1,17 +1,15 @@
 library(shiny)
 library(ctmm)
 library(sf)
-library(leaflet)
+library(glue)
+library(dplyr)
 library(purrr)
-
-# to display messages to the user in the log file of the App in MoveApps
-# one can use the function from the src/common/logger.R file:
-# logger.fatal() -> logger.trace()
+library(mapview)
+library(leaflet)
 
 shinyModuleUserInterface <- function(id, label) {
   ns <- NS(id) ## all IDs of UI functions need to be wrapped in ns()
   tagList(
-    titlePanel("Occurence"),
     leafletOutput(ns("map"))
   )
 }
@@ -19,24 +17,20 @@ shinyModuleUserInterface <- function(id, label) {
 shinyModule <- function(input, output, session, data){ ## The parameter "data" is reserved for the data object passed on from the previous app
   ns <- session$ns ## all IDs of UI functions need to be wrapped in ns()
   
-  
   occu <- occurrence(data[[2]], data[[1]])
-  
   occu_sf <- map_dfr(occu, ~ sf::st_as_sf(ctmm::SpatialPolygonsDataFrame.UD(.x)))
-  
   sf::st_write(occu_sf, appArtifactPath(glue::glue("homerange.gpkg")))
   
   output$map <- renderLeaflet({
-    occu_sf |> 
-      sf::st_transform(4326) |> 
-      leaflet()  |> 
-      addTiles() |> 
-      addPolygons()
+    
+    m <- mapview(occu_sf)
+    # export as geopackage
+    akde_sf |> 
+      sf::st_write(appArtifactPath(glue::glue("homerange.gpkg")))
+    m@map
   })
   
-  return(reactive({
+  return(reactive({ 
     list(data[[1]], occu, data[[2]])
-    })) ## if data are not modified, the unmodified input data must be returned
+  })) ## if data are not modified, the unmodified input data must be returned
 }
-
-

@@ -3,6 +3,9 @@
   "dependencies": {
     "R": [
       {
+        "name": "dplyr"
+      },
+      {
         "name": "ctmm"
       },
       {
@@ -12,10 +15,13 @@
         "name": "sf"
       },
       {
-        "name": "leaflet"
+        "name": "glue"
       },
       {
-        "name": "dplyr"
+        "name": "mapview"
+      },
+      {
+        "name": "leaflet"
       }
     ]
   },
