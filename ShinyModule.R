@@ -38,3 +38,5 @@ shinyModule <- function(input, output, session, data){ ## The parameter "data" i
     data
     })) ## if data are not modified, the unmodified input data must be returned
 }
+
+
