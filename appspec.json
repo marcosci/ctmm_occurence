@@ -13,6 +13,9 @@
       },
       {
         "name": "leaflet"
+      },
+      {
+        "name": "dplyr"
       }
     ]
   },

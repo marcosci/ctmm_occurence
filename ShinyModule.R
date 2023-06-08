@@ -20,7 +20,7 @@ shinyModule <- function(input, output, session, data){ ## The parameter "data" i
   ns <- session$ns ## all IDs of UI functions need to be wrapped in ns()
   
   
-  occu <- occurrence(data[[1]], data[[2]])
+  occu <- occurrence(data[[2]], data[[1]])
   
   occu_sf <- map_dfr(occu, ~ sf::st_as_sf(ctmm::SpatialPolygonsDataFrame.UD(.x)))
   
@@ -35,7 +35,7 @@ shinyModule <- function(input, output, session, data){ ## The parameter "data" i
   })
   
   return(reactive({
-    c(data, occu)
+    list(data[[1]], occu, data[[2]])
     })) ## if data are not modified, the unmodified input data must be returned
 }
 
