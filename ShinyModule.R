@@ -17,7 +17,7 @@ shinyModuleUserInterface <- function(id, label) {
 shinyModule <- function(input, output, session, data){ ## The parameter "data" is reserved for the data object passed on from the previous app
   ns <- session$ns ## all IDs of UI functions need to be wrapped in ns()
   
-  occu <- occurrence(data[[2]], data[[1]])
+  occu <- occurrence(data[[1]], data[[2]])
   occu_sf <- map_dfr(occu, ~ sf::st_as_sf(ctmm::SpatialPolygonsDataFrame.UD(.x)))
   sf::st_write(occu_sf, appArtifactPath(glue::glue("homerange.gpkg")))
   
