@@ -3,6 +3,12 @@
   "dependencies": {
     "R": [
       {
+        "name": "shiny"
+      },
+      {
+        "name": "shinyWidgets"
+      },
+      {
         "name": "dplyr"
       },
       {
@@ -18,7 +24,10 @@
         "name": "glue"
       },
       {
-        "name": "mapview"
+        "name": "zip"
+      },
+      {
+        "name": "shinycssloaders"
       },
       {
         "name": "leaflet"
@@ -65,8 +74,8 @@
   ],
   "funding": [
     {
-      "name": "Friends of the North Carolina State",
-      "comment": "grant for App"
+      "name": " NSF award 1914928",
+      "comment": "Grant for developing the app"
     }
   ],
   "references": [
@@ -77,7 +86,7 @@
     }
   ],
   "documentation": {
-    "url": "https://github.com/marcosci/ctmm_occurence/"
+    "url": "https://github.com/ctmm-initiative/ctmmMoveApp_occurrence/blob/main/README.md"
   }
   
 }
