@@ -1,7 +1,7 @@
 ## Provided testing datasets in `./data/raw`: 
 ## "input1_greylgeese.rds", "input2_whitefgeese.rds", "input3_stork.rds", "input4_goat.rds"  
 ## for own data: file saved as a .rds containing a object of class MoveStack
-inputFileName = "./data/raw/input7.rds" 
+inputFileName = "./data/raw/input8_ctmm_model_with_data.rds" 
 ## optionally change the output file name
 unlink("./data/output/", recursive = TRUE) # delete "output" folder if it exists, to have a clean start for every run
 dir.create("./data/output/") # create folder for output
