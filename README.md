@@ -10,7 +10,7 @@ This function calculates an occurrence distribution from telemetry data and a co
 ## Documentation
 After fitting a continuous-time movement model, this app allows to reconstruct the path where the animal possibly went.
 
-For details and background of the method please see the [publication](https://esajournals.onlinelibrary.wiley.com/doi/full/10.1890/15-1607.1) and the methods description in the ctmm package [occurance](https://ctmm-initiative.github.io/ctmm/reference/occurrence.html).
+For details and background of the method please see the [publication](https://esajournals.onlinelibrary.wiley.com/doi/full/10.1890/15-1607.1) and the methods description in the [documentation of the occurance function](https://ctmm-initiative.github.io/ctmm/reference/occurrence.html) of the ctmm package .
 
 ### Input data
 `ctmm UD with Data and Model`
